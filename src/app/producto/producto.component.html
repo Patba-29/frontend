@@ -1,1 +1,25 @@
-<p>producto works!</p>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>  
+  
+  
+  <!-- elementos del modal -->
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="">Nombre del Producto</label>
+        <input type="text" name="nombre">
+      </div>
+    </form>
+  </div>
+  <!-- final del modal -->
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Cerrar Aplicación')">Cerrar</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-info" (click)="open(content)">Abrir Ventana</button>
